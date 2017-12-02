@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorpane" prefHeight="239.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsController">
+   <children>
+      <ColorPicker fx:id="colorpicker" layoutX="189.0" layoutY="12.0" />
+      <Text fx:id="tbg" layoutX="14.0" layoutY="29.0"  text="Current Background Colour:">
+      </Text>
+      <Text fx:id="tp" layoutX="14.0" layoutY="64.0"  text="Polling Rate (in ms):">
+      </Text>
+      <TextField fx:id="inputPollingRate" alignment="CENTER_RIGHT" disable="true" layoutX="139.0" layoutY="46.0" prefHeight="25.0" prefWidth="172.0" text="100" />
+      <Line fx:id="line1" endX="325.0" layoutY="80.0" />
+      <Text fx:id="tCM" layoutX="122.0" layoutY="99.0"  text="Chest Maxima" textAlignment="CENTER">
+      </Text>
+      <Line fx:id="l2" endX="325.0" layoutY="109.0" />
+      <Text fx:id="tep" layoutX="28.0" layoutY="128.0"  text="Eastern Palace:">
+      </Text>
+      <Text fx:id="tdp" layoutX="32.0" layoutY="154.0"  text="Desert Palace:" textAlignment="RIGHT">
+      </Text>
+      <Text fx:id="tth" layoutX="28.0" layoutY="178.0"  text="Tower of Hera:">
+      </Text>
+      <Text fx:id="tpod" layoutX="1.0" layoutY="203.0"  text="Palace of Darkness:">
+      </Text>
+      <Text fx:id="tsp" layoutX="27.0" layoutY="229.0"  text="Swamp Palace:">
+      </Text>
+      <Text fx:id="tsw" layoutX="188.0" layoutY="128.0"  text="Skull Woods:">
+      </Text>
+      <Text fx:id="tt" layoutX="188.0" layoutY="153.0"  text="Thief's Town:">
+      </Text>
+      <Text fx:id="tip" layoutX="202.0" layoutY="177.0"  text="Ice Palace:">
+      </Text>
+      <Text fx:id="tmm" layoutX="190.0" layoutY="203.0"  text="Misery Mire:">
+      </Text>
+      <Text fx:id="ttr" layoutX="192.0" layoutY="228.0"  text="Turtle Rock:">
+      </Text>
+      <TextField fx:id="maxEP" alignment="CENTER" layoutX="118.0" layoutY="111.0" prefHeight="25.0" prefWidth="59.0" text="3" />
+      <TextField fx:id="maxDP" alignment="CENTER" layoutX="118.0" layoutY="136.0" prefHeight="25.0" prefWidth="59.0" text="2" />
+      <TextField fx:id="maxTH" alignment="CENTER" layoutX="118.0" layoutY="161.0" prefHeight="25.0" prefWidth="59.0" text="2" />
+      <TextField fx:id="maxPD" alignment="CENTER" layoutX="118.0" layoutY="186.0" prefHeight="25.0" prefWidth="59.0" text="5" />
+      <TextField fx:id="maxSP" alignment="CENTER" layoutX="118.0" layoutY="211.0" prefHeight="25.0" prefWidth="59.0" text="6" />
+      <TextField fx:id="maxSW" alignment="CENTER" layoutX="267.0" layoutY="110.0" prefHeight="25.0" prefWidth="59.0" text="2" />
+      <TextField fx:id="maxTT" alignment="CENTER" layoutX="267.0" layoutY="135.0" prefHeight="25.0" prefWidth="59.0" text="4" />
+      <TextField fx:id="maxIP" alignment="CENTER" layoutX="267.0" layoutY="160.0" prefHeight="25.0" prefWidth="59.0" text="3" />
+      <TextField fx:id="maxMM" alignment="CENTER" layoutX="267.0" layoutY="185.0" prefHeight="25.0" prefWidth="59.0" text="2" />
+      <TextField fx:id="maxTR" alignment="CENTER" layoutX="267.0" layoutY="210.0" prefHeight="25.0" prefWidth="59.0" text="5" />
+      <Line fx:id="l3" endX="325.0" layoutY="238.0" />
+   </children>
+</AnchorPane>
