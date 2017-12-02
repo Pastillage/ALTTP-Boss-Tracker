@@ -4,11 +4,11 @@ Java based Boss Tracker for use on streams.
 
 
 ## Features
-..* Toggleable decals on top of boss images.
-..* Fast prize selection thanks to SHIFT or CTRL clicking.
-..* Amount of chests customization.
-..* Fully remapable boss location.
-..* And more!
+* Toggleable decals on top of boss images.
+* Fast prize selection thanks to SHIFT or CTRL clicking.
+* Amount of chests customization.
+* Fully remapable boss location.
+* And more!
 
 ### Screenshots
 
