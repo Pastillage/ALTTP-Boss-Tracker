@@ -10,6 +10,7 @@ public final class Settings
     // TODO: Save to INI
     // TODO: Read from INI
     // TODO: SRAM
+
     public static final Settings INSTANCE = new Settings();
     public static Color bgColor = Color.BLACK;
     public static Long POLLING_RATE = 100l;
