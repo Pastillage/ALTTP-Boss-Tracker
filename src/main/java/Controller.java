@@ -269,11 +269,10 @@ public class Controller implements Initializable
      */
     public void setMedallions(double x, double y, ImageView img)
     {
-        // x + 32 y + 32
         img.setImage(new Image(getClass().getResource("decals/medallion0.png").toString()));
-        img.setLayoutX(x+32);
-        img.setLayoutY(y+26);
-        img.setVisible(true);
+        img.setLayoutX(x + Settings.offset_medallion.x);
+        img.setLayoutY(y + 26 + Settings.offset_medallion.y);
+        img.setVisible(Settings.medallions);
     }
 
     /**
@@ -286,9 +285,9 @@ public class Controller implements Initializable
     {
         // y + 32
         img.setImage(new Image(getClass().getResource("decals/chest" + chests[val] + ".png").toString()));
-        img.setLayoutX(x);
-        img.setLayoutY(y+58);
-        img.setVisible(true);
+        img.setLayoutX(x + Settings.offset_chest.x);
+        img.setLayoutY(y + 26 + Settings.offset_chest.y);
+        img.setVisible(Settings.chests);
     }
 
     /**
@@ -301,18 +300,18 @@ public class Controller implements Initializable
     {
        ImageView img = lookupTextImageView.get(bossname);
        img.setImage(new Image(getClass().getResource("text/t" + bossname + ".png").toString()));
-       img.setLayoutX(x);
-       img.setLayoutY(y+26);
-       img.setVisible(true);
+       img.setLayoutX(x + Settings.offset_label.x);
+       img.setLayoutY(y + 26 + Settings.offset_label.y);
+       img.setVisible(Settings.labels);
     }
 
     public void setPrices(String bossname, double x, double y)
     {
         ImageView img = lookupPrizeImageView.get(bossname);
         img.setImage(new Image(getClass().getResource("decals/p0.png").toString()));
-        img.setLayoutX(x+32);
-        img.setLayoutY(y+58);
-        img.setVisible(true);
+        img.setLayoutX(x + Settings.offset_prizes.x);
+        img.setLayoutY(y + 26 + Settings.offset_prizes.y);
+        img.setVisible(Settings.prizes);
     }
 
     /**
@@ -366,7 +365,7 @@ public class Controller implements Initializable
             }
             else
             {
-                img.setOpacity(0.15);
+                img.setOpacity(Settings.getOpacity());
             }
         });
     }
@@ -668,7 +667,7 @@ public class Controller implements Initializable
         Parent root = fxmlLoader.load(getClass().getResource("/Settings.fxml"));
         // TODO: Set defaults
         Stage colorpicker_stage = new Stage();
-        colorpicker_stage.setScene(new Scene(root, 325, 235));
+        colorpicker_stage.setScene(new Scene(root, Settings.layout_size_set.x, Settings.layout_size_set.y));
         colorpicker_stage.show();
     }
 

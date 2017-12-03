@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorpane" prefHeight="239.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsController">
+<AnchorPane fx:id="anchorpane" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SettingsController">
    <children>
       <ColorPicker fx:id="colorpicker" layoutX="189.0" layoutY="12.0" />
-      <Text fx:id="tbg" layoutX="14.0" layoutY="29.0"  text="Current Background Colour:">
+      <Text layoutX="14.0" layoutY="29.0" text="Current background colour:">
       </Text>
-      <Text fx:id="tp" layoutX="14.0" layoutY="64.0"  text="Polling Rate (in ms):">
+      <Text layoutX="14.0" layoutY="64.0" text="Polling rate (in ms):">
       </Text>
-      <TextField fx:id="inputPollingRate" alignment="CENTER_RIGHT" disable="true" layoutX="139.0" layoutY="46.0" prefHeight="25.0" prefWidth="172.0" text="100" />
-      <Line fx:id="line1" endX="325.0" layoutY="80.0" />
-      <Text fx:id="tCM" layoutX="122.0" layoutY="99.0"  text="Chest Maxima" textAlignment="CENTER">
+      <TextField fx:id="inputPollingRate" disable="true" layoutX="139.0" layoutY="46.0" prefHeight="25.0" prefWidth="172.0" text="100" />
+      <Line endX="325.0" layoutY="80.0" />
+      <Text layoutX="122.0" layoutY="99.0" text="Chest maxima" textAlignment="CENTER">
       </Text>
-      <Line fx:id="l2" endX="325.0" layoutY="109.0" />
-      <Text fx:id="tep" layoutX="28.0" layoutY="128.0"  text="Eastern Palace:">
+      <Line endX="325.0" layoutY="109.0" />
+      <Text layoutX="28.0" layoutY="128.0" text="Eastern Palace:">
       </Text>
-      <Text fx:id="tdp" layoutX="32.0" layoutY="154.0"  text="Desert Palace:" textAlignment="RIGHT">
+      <Text layoutX="32.0" layoutY="154.0" text="Desert Palace:" textAlignment="RIGHT">
       </Text>
-      <Text fx:id="tth" layoutX="28.0" layoutY="178.0"  text="Tower of Hera:">
+      <Text layoutX="28.0" layoutY="178.0" text="Tower of Hera:">
       </Text>
-      <Text fx:id="tpod" layoutX="1.0" layoutY="203.0"  text="Palace of Darkness:">
+      <Text layoutX="1.0" layoutY="203.0" text="Palace of Darkness:">
       </Text>
-      <Text fx:id="tsp" layoutX="27.0" layoutY="229.0"  text="Swamp Palace:">
+      <Text layoutX="27.0" layoutY="229.0" text="Swamp Palace:">
       </Text>
-      <Text fx:id="tsw" layoutX="188.0" layoutY="128.0"  text="Skull Woods:">
+      <Text layoutX="188.0" layoutY="128.0" text="Skull Woods:">
       </Text>
-      <Text fx:id="tt" layoutX="188.0" layoutY="153.0"  text="Thief's Town:">
+      <Text layoutX="188.0" layoutY="153.0" text="Thief's Town:">
       </Text>
-      <Text fx:id="tip" layoutX="202.0" layoutY="177.0"  text="Ice Palace:">
+      <Text layoutX="202.0" layoutY="177.0" text="Ice Palace:">
       </Text>
-      <Text fx:id="tmm" layoutX="190.0" layoutY="203.0"  text="Misery Mire:">
+      <Text layoutX="190.0" layoutY="203.0" text="Misery Mire:">
       </Text>
-      <Text fx:id="ttr" layoutX="192.0" layoutY="228.0"  text="Turtle Rock:">
+      <Text layoutX="192.0" layoutY="228.0" text="Turtle Rock:">
       </Text>
       <TextField fx:id="maxEP" alignment="CENTER" layoutX="118.0" layoutY="111.0" prefHeight="25.0" prefWidth="59.0" text="3" />
       <TextField fx:id="maxDP" alignment="CENTER" layoutX="118.0" layoutY="136.0" prefHeight="25.0" prefWidth="59.0" text="2" />
@@ -48,6 +52,85 @@
       <TextField fx:id="maxIP" alignment="CENTER" layoutX="267.0" layoutY="160.0" prefHeight="25.0" prefWidth="59.0" text="3" />
       <TextField fx:id="maxMM" alignment="CENTER" layoutX="267.0" layoutY="185.0" prefHeight="25.0" prefWidth="59.0" text="2" />
       <TextField fx:id="maxTR" alignment="CENTER" layoutX="267.0" layoutY="210.0" prefHeight="25.0" prefWidth="59.0" text="5" />
-      <Line fx:id="l3" endX="325.0" layoutY="238.0" />
+      <Line endX="325.0" layoutY="238.0" />
+      <Line endY="238.0" layoutX="325.0" />
+      <Label layoutX="340.0" layoutY="21.0" text="Chest offsets:" />
+      <Label layoutX="430.0" text="X" />
+      <Label layoutX="469.0" text="Y" />
+      <TextField fx:id="off_c_x" alignment="CENTER" layoutX="422.0" layoutY="17.0" prefHeight="25.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="off_c_y" alignment="CENTER" layoutX="460.0" layoutY="17.0" prefHeight="25.0" prefWidth="25.0" text="32">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="341.0" layoutY="47.0" text="Label offsets:" />
+      <TextField fx:id="off_l_x" alignment="CENTER" layoutX="422.0" layoutY="43.0" prefHeight="25.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="off_l_y" alignment="CENTER" layoutX="460.0" layoutY="43.0" prefHeight="25.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="335.0" layoutY="74.0" text="Medal offsets:" />
+      <TextField fx:id="off_m_x" alignment="CENTER" layoutX="422.0" layoutY="69.0" prefHeight="25.0" prefWidth="25.0" text="32">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="off_m_y" alignment="CENTER" layoutX="460.0" layoutY="69.0" prefHeight="25.0" prefWidth="25.0" text="0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="343.0" layoutY="99.0" text="Prize offsets:" />
+      <TextField fx:id="off_p_x" alignment="CENTER" layoutX="422.0" layoutY="95.0" prefHeight="25.0" prefWidth="25.0" text="32">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="off_p_y" alignment="CENTER" layoutX="460.0" layoutY="95.0" prefHeight="25.0" prefWidth="25.0" text="32">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Line endX="73.0" layoutX="426.0" layoutY="128.0" startX="-100.0" />
+      <Line endX="73.0" layoutX="426.0" layoutY="238.0" startX="-100.0" />
+      <CheckBox fx:id="checkbox_labels" layoutX="337.0" layoutY="138.0" mnemonicParsing="false" text="Show labels by default" />
+      <CheckBox fx:id="checkbox_chests" layoutX="337.0" layoutY="163.0" mnemonicParsing="false" text="Show chests by default" />
+      <CheckBox fx:id="checkbox_medals" layoutX="337.0" layoutY="189.0" mnemonicParsing="false" selected="true" text="Show medals by default" />
+      <CheckBox fx:id="checkbox_prizes" layoutX="337.0" layoutY="214.0" mnemonicParsing="false" selected="true" text="Show prizes by default" />
+      <Line endY="160.0" layoutX="150.0" layoutY="239.0" />
+      <TextField fx:id="opacity_boss" alignment="CENTER" layoutX="105.0" layoutY="247.0" prefHeight="25.0" prefWidth="37.0" text="15">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </TextField>
+      <Label layoutX="6.0" layoutY="251.0" text="Boss opacity (%):" />
+      <Line endX="150.0" layoutY="280.0" />
+      <Label layoutX="12.0" layoutY="281.0" text="Size boss GUI on launch" />
+      <TextField fx:id="boss_gui_x" alignment="CENTER" layoutX="7.0" layoutY="303.0" prefHeight="25.0" prefWidth="59.0" text="128" />
+      <TextField fx:id="boss_gui_y" alignment="CENTER" layoutX="83.0" layoutY="301.0" prefHeight="25.0" prefWidth="59.0" text="665" />
+      <TextField fx:id="boss_gui_curr_x" alignment="CENTER" disable="true" layoutX="8.0" layoutY="346.0" prefHeight="25.0" prefWidth="59.0" text="128" />
+      <TextField fx:id="boss_gui_curr_y" alignment="CENTER" disable="true" layoutX="84.0" layoutY="345.0" prefHeight="25.0" prefWidth="59.0" text="665" />
+      <Label layoutX="43.0" layoutY="328.0" text="Current size" />
+      <Button fx:id="b_use_current_gui_size" layoutX="24.0" layoutY="374.0" mnemonicParsing="false" text="Use current size" />
+      <TextField fx:id="pathSaveFolder" layoutX="162.0" layoutY="267.0" prefHeight="25.0" prefWidth="251.0" />
+      <Label layoutX="163.0" layoutY="246.0" text="SNES saves location:" />
+      <Button fx:id="bBrowseSaveLocation" layoutX="421.0" layoutY="266.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Browse" />
+      <Label layoutX="163.0" layoutY="305.0" text="SRAM update rate (in ms):" />
+      <TextField fx:id="inputSRAMrate" disable="true" layoutX="319.0" layoutY="301.0" prefHeight="25.0" prefWidth="174.0" text="100" />
+      <Button layoutX="380.0" layoutY="374.0" mnemonicParsing="false" text="Exit without saving" />
+      <Button layoutX="282.0" layoutY="374.0" mnemonicParsing="false" text="Save settings" />
+      <CheckBox fx:id="checkboxUseMostRecent" layoutX="358.0" layoutY="245.0" mnemonicParsing="false" selected="true" text="Use most recent save" />
+      <Label layoutX="163.0" layoutY="328.0" text="Custom save file selection:" />
+      <TextField fx:id="pathCustomSaveLocation" layoutX="162.0" layoutY="345.0" prefHeight="25.0" prefWidth="251.0" />
+      <Button fx:id="bBrowseCustomSave" layoutX="421.0" layoutY="345.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Browse" />
    </children>
 </AnchorPane>
