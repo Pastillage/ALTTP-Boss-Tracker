@@ -2,6 +2,8 @@
 # ALTTP-Boss-Tracker
 Java based Boss Tracker for use on streams.
 
+If you enjoy this Tracker, consider giving me a follow on (twitch)[https://www.twitch.tv/pastillage]
+
 
 ## Features
 * Toggleable decals on top of boss images.
