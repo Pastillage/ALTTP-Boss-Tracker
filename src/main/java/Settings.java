@@ -20,7 +20,7 @@ public final class Settings
     public static Coordinates offset_label      = new Coordinates(0,  0);
     public static Coordinates offset_medallion  = new Coordinates(32, 0);
     public static Coordinates offset_prizes     = new Coordinates(32, 32);
-    public static Coordinates layout_size_gui   = new Coordinates(128, 665);
+    public static Coordinates layout_size_gui   = new Coordinates(128, 729);
     public static Coordinates layout_size_set   = new Coordinates(500, 400);
 
     public static boolean labels = false;

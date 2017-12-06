@@ -14,6 +14,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import javax.sound.midi.Soundbank;
@@ -134,6 +135,39 @@ public class Controller implements Initializable
     @FXML
     private ImageView pTR;
 
+    @FXML
+    private Text kEP;
+
+    @FXML
+    private Text kDP;
+
+    @FXML
+    private Text kTH;
+
+    @FXML
+    private Text kPD;
+
+    @FXML
+    private Text kSP;
+
+    @FXML
+    private Text kSW;
+
+    @FXML
+    private Text kTT;
+
+    @FXML
+    private Text kIP;
+
+    @FXML
+    private Text kMM;
+
+    @FXML
+    private Text kTR;
+
+    @FXML
+    private Text kAGA;
+
     private int currMM = 0;
     private int currTR = 0;
     private Color currBGColour;
@@ -154,7 +188,25 @@ public class Controller implements Initializable
         Platform.runLater(() -> setBGcolor(Color.BLACK));
         Platform.runLater(() -> fillGridpane());
         Platform.runLater(() -> setDefaultBosses());
+        Platform.runLater(() -> setBigKeys("decals/bigkeyBack.png"));
+        Platform.runLater(() -> setSmallKeys("decals/smallkeys/key"));
         Platform.runLater(() -> changeListenerThread());
+    }
+
+    // TODO: SRAM but for that I need the boss location flags.
+    public void DaemonSRAM()
+    {
+        Runnable r = () ->
+        {
+            // Get SRAM file to read.
+
+            // Read Relevant memory locations
+
+            // Use them.
+        };
+        Thread tSRAM = new Thread(r);
+        tSRAM.setDaemon(true);
+        tSRAM.start();
     }
 
     public void initHashMaps()
@@ -225,11 +277,13 @@ public class Controller implements Initializable
      */
     public void fillGridpane()
     {
-        for (int c = 0; c < 11; c++)
+        for (int c = 0; c < 12; c++)
         {
-            for (int i = 0; i < 11; i++)
+            for (int i = 0; i < 12; i++)
             {
-                gridpane.add(new ImageView(), c, i);
+                ImageView img = new ImageView();
+                img.setOpacity(Settings.getOpacity());
+                gridpane.add(img, c, i);
             }
         }
     }
@@ -258,7 +312,83 @@ public class Controller implements Initializable
         setBoss("boss/ip.png", 7,0);
         setBoss("boss/mm.png", 8,0);
         setBoss("boss/tr.png", 9,0);
-        setBoss("boss/aga.png", 0,1);
+        setBoss("boss/aga.png", 10,0);
+    }
+
+    public void setBigKeys(String img_loc)
+    {
+        for (int c = 0; c < 10; c++)
+        {
+            ImageView img = (ImageView) getNodeByRowColumnIndex(c, 1, gridpane);
+            img.setImage(new Image(getClass().getResource(img_loc).toString()));
+
+            img.setOnMouseClicked(event ->
+            {
+                if (img.getOpacity() != 1.0d)
+                {
+                    img.setOpacity(1.0d);
+                }
+                else
+                {
+                    img.setOpacity(Settings.getOpacity());
+                }
+            });
+        }
+    }
+
+    public void setSmallKeys(String img_loc)
+    {
+        for (int c = 0; c < 11; c++)
+        {
+            ImageView img;
+            img = (ImageView) getNodeByRowColumnIndex(c, 2, gridpane);
+
+            img.setImage(new Image(getClass().getResource(img_loc + c + ".png").toString()));
+
+            setClickEvent(c, img);
+        }
+        setKeyText();
+    }
+
+    public void setClickEvent(int flag, ImageView img)
+    {
+        switch (flag)
+        {
+            case 0 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().GT(img, kEP)); break;
+            case 1 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().DP(img, kDP)); break;
+            case 2 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().TH(img, kTH)); break;
+            case 3 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().PD(img, kPD)); break;
+            case 4 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().SP(img, kSP)); break;
+            case 5 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().SW(img, kSW)); break;
+            case 6 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().TT(img, kTT)); break;
+            case 7 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().IP(img, kIP)); break;
+            case 8 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().MM(img, kMM)); break;
+            case 9 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().TR(img, kTR)); break;
+            case 10 : img.setOnMouseClicked(event -> Keysanity.getINSTANCE().AGA(img, kAGA)); break;
+        }
+    }
+
+    // TODO: Based on layout.
+    public void setKeyText()
+    {
+        xyKey(kEP, 128, 85, "0 / 4");
+        xyKey(kDP, 128, 149, "0 / 1");
+        xyKey(kTH, 128, 213, "0 / 1");
+        xyKey(kPD, 128, 277, "0 / 6");
+        xyKey(kSP, 128, 341, "0 / 1");
+        xyKey(kSW, 128, 405, "0 / 3");
+        xyKey(kTT, 128, 469, "0 / 1");
+        xyKey(kIP, 128, 533, "0 / 2");
+        xyKey(kMM, 128, 597, "0 / 3");
+        xyKey(kTR, 128, 661, "0 / 4");
+        xyKey(kAGA, 128, 725, "0 / 2");
+    }
+
+    public void xyKey(Text t, double x, double y, String text)
+    {
+        t.setLayoutX(x);
+        t.setLayoutY(y);
+        t.setText(text);
     }
 
     /**

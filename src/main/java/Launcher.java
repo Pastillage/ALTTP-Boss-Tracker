@@ -14,7 +14,7 @@ public class Launcher extends Application
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("/GUI.fxml"));
         // TODO: Set defaults
-        primaryStage.setScene(new Scene(root, 128, 665));
+        primaryStage.setScene(new Scene(root, 192, 729));
         primaryStage.show();
     }
 
