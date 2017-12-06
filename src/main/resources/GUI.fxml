@@ -8,12 +8,14 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="anchorpane" prefHeight="729.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <children>
       <MenuBar fx:id="menubar" prefHeight="26.0" prefWidth="704.0">
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="Settings">
             <items>
                 <MenuItem mnemonicParsing="false" onAction="#ToggleChests" text="Toggle Chests" />
                 <MenuItem mnemonicParsing="false" onAction="#ToggleMedallions" text="Toggle Medallions" />
@@ -66,16 +68,16 @@
       <ImageView fx:id="cIP" fitHeight="32.0" fitWidth="32.0" layoutX="90.0" layoutY="90.0" onMouseClicked="#ChestLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="cMM" fitHeight="32.0" fitWidth="32.0" layoutX="100.0" layoutY="100.0" onMouseClicked="#ChestLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="cTR" fitHeight="32.0" fitWidth="32.0" layoutX="110.0" layoutY="110.0" onMouseClicked="#ChestLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tEP" fitHeight="32.0" fitWidth="32.0" layoutX="120.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tDP" fitHeight="32.0" fitWidth="32.0" layoutX="130.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tTH" fitHeight="32.0" fitWidth="32.0" layoutX="140.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tPD" fitHeight="32.0" fitWidth="32.0" layoutX="150.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tSP" fitHeight="32.0" fitWidth="32.0" layoutX="160.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tSW" fitHeight="32.0" fitWidth="32.0" layoutX="170.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tTT" fitHeight="32.0" fitWidth="32.0" layoutX="180.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tIP" fitHeight="32.0" fitWidth="32.0" layoutX="190.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tMM" fitHeight="32.0" fitWidth="32.0" layoutX="200.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false" />
-      <ImageView fx:id="tTR" fitHeight="32.0" fitWidth="32.0" layoutX="210.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tEP" fitHeight="24.0" fitWidth="24.0" layoutX="120.0" layoutY="120.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tDP" fitHeight="24.0" fitWidth="24.0" layoutX="130.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tTH" fitHeight="24.0" fitWidth="24.0" layoutX="140.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tPD" fitHeight="24.0" fitWidth="24.0" layoutX="150.0" layoutY="150.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tSP" fitHeight="24.0" fitWidth="24.0" layoutX="160.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tSW" fitHeight="24.0" fitWidth="24.0" layoutX="170.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tTT" fitHeight="24.0" fitWidth="24.0" layoutX="180.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tIP" fitHeight="24.0" fitWidth="24.0" layoutX="190.0" layoutY="190.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tMM" fitHeight="24.0" fitWidth="24.0" layoutX="200.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <ImageView fx:id="tTR" fitHeight="24.0" fitWidth="24.0" layoutX="210.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="pEP" fitHeight="32.0" fitWidth="32.0" layoutX="220.0" layoutY="220.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="pDP" fitHeight="32.0" fitWidth="32.0" layoutX="230.0" layoutY="230.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="pTH" fitHeight="32.0" fitWidth="32.0" layoutX="240.0" layoutY="240.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
@@ -86,5 +88,19 @@
       <ImageView fx:id="pIP" fitHeight="32.0" fitWidth="32.0" layoutX="290.0" layoutY="290.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="pMM" fitHeight="32.0" fitWidth="32.0" layoutX="300.0" layoutY="300.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
       <ImageView fx:id="pTR" fitHeight="32.0" fitWidth="32.0" layoutX="310.0" layoutY="310.0" onMouseClicked="#PrizeLogic" pickOnBounds="true" preserveRatio="true" visible="false" />
+      <Text fx:id="kEP" fill="WHITE" layoutY="-13.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0">
+         <font>
+            <Font size="14.0" />
+         </font></Text>
+      <Text fx:id="kDP" fill="WHITE" layoutX="10.0" layoutY="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kTH" fill="WHITE" layoutX="20.0" layoutY="7.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kPD" fill="WHITE" layoutX="30.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kSP" fill="WHITE" layoutX="40.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kSW" fill="WHITE" layoutX="50.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kTT" fill="WHITE" layoutX="60.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kIP" fill="WHITE" layoutX="70.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kMM" fill="WHITE" layoutX="80.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kTR" fill="WHITE" layoutX="90.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
+      <Text fx:id="kAGA" fill="WHITE" layoutX="100.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0 / x" textAlignment="CENTER" wrappingWidth="64.0" />
    </children>
 </AnchorPane>
