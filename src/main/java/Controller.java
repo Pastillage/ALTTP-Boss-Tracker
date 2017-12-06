@@ -797,7 +797,10 @@ public class Controller implements Initializable
         Parent root = fxmlLoader.load(getClass().getResource("/Settings.fxml"));
         // TODO: Set defaults
         Stage colorpicker_stage = new Stage();
+        colorpicker_stage.setTitle("ALTTP Boss Tracker v1.1 - By: twitch.tv/Pastillage");
+        colorpicker_stage.getIcons().add(new Image(getClass().getResource("decals/map.png").toString()));
         colorpicker_stage.setScene(new Scene(root, Settings.layout_size_set.x, Settings.layout_size_set.y));
+        colorpicker_stage.setResizable(false);
         colorpicker_stage.show();
     }
 
