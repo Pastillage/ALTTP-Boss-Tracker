@@ -317,7 +317,7 @@ public class Controller implements Initializable
 
     public void setBigKeys(String img_loc)
     {
-        for (int c = 0; c < 10; c++)
+        for (int c = 0; c < 11; c++)
         {
             ImageView img = (ImageView) getNodeByRowColumnIndex(c, 1, gridpane);
             img.setImage(new Image(getClass().getResource(img_loc).toString()));
