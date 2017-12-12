@@ -6,7 +6,7 @@
 
     <groupId>alttp-boss-tracker</groupId>
     <artifactId>alttp-bosstracker</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <build>
         <plugins>
             <plugin>
