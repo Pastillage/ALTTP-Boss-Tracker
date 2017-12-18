@@ -168,6 +168,21 @@ public class Controller implements Initializable
     @FXML
     private Text kAGA;
 
+    @FXML
+    private ImageView imgviewMitt;
+
+    @FXML
+    private ImageView imgviewSword;
+
+    @FXML
+    private ImageView imgviewTunic;
+
+    @FXML
+    private ImageView imgviewShield;
+
+    @FXML
+    private ImageView imgviewHeartPiece;
+
     private int currMM = 0;
     private int currTR = 0;
     private Color currBGColour;
@@ -191,6 +206,8 @@ public class Controller implements Initializable
         Platform.runLater(() -> setBigKeys("decals/bigkeyBack.png"));
         Platform.runLater(() -> setSmallKeys("decals/smallkeys/key"));
         Platform.runLater(() -> changeListenerThread());
+        Platform.runLater(() -> setItems());
+        Platform.runLater(() -> initExceptionalItems());
     }
 
     // TODO: SRAM but for that I need the boss location flags.
@@ -214,6 +231,30 @@ public class Controller implements Initializable
         initTextHM();
         initPrizeHM();
         InitPrizeValues();
+    }
+
+    /**
+     * They be exceptional.
+     */
+    public void initExceptionalItems()
+    {
+        imgviewHeartPiece.setLayoutY(470);
+        imgviewHeartPiece.setLayoutX(832);
+
+        imgviewShield.setLayoutY(470);
+        imgviewShield.setLayoutX(768);
+
+        imgviewTunic.setLayoutY(470);
+        imgviewTunic.setLayoutX(704);
+
+        imgviewTunic.setLayoutY(470);
+        imgviewTunic.setLayoutX(704);
+
+        imgviewSword.setLayoutY(470);
+        imgviewSword.setLayoutX(640);
+
+        imgviewMitt.setLayoutY(218);
+        imgviewMitt.setLayoutX(636);
     }
 
     public void initTextHM()
@@ -277,9 +318,9 @@ public class Controller implements Initializable
      */
     public void fillGridpane()
     {
-        for (int c = 0; c < 12; c++)
+        for (int c = 0; c < 14; c++)
         {
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 14; i++)
             {
                 ImageView img = new ImageView();
                 img.setOpacity(Settings.getOpacity());
@@ -313,6 +354,45 @@ public class Controller implements Initializable
         setBoss("boss/mm.png", 8,0);
         setBoss("boss/tr.png", 9,0);
         setBoss("boss/aga.png", 10,0);
+    }
+
+    public void setItems()
+    {
+        setImage("tracker/items/bow0.png", 0, 10);
+        setImage("tracker/items/bow1.png", 0, 11);
+        setImage("tracker/items/lamp.png", 0, 12);
+        setImage("tracker/items/hookshot.png", 0, 13);
+        setImage("tracker/items/firerod.png", 1, 10);
+        setImage("tracker/items/icerod.png", 1, 11);
+        setImage("tracker/items/hammer.png", 1, 12);
+        setImage("tracker/items/mirror.png", 1, 13);
+        setImage("tracker/items/cane.png", 2, 10);
+        setImage("tracker/items/byrna.png", 2, 11);
+        setImage("tracker/items/bottle.png", 2, 12);
+        setImage("tracker/items/flute.png", 2, 13);
+        // TODO: Make Exception
+        //setImage("tracker/items/mitts1.png", 3, 10, (byte) 0);
+        setImage("tracker/items/moonpearl.png", 3, 11);
+        setImage("tracker/items/boots.png", 3, 12);
+        setImage("tracker/items/flippers.png", 3, 13);
+        setImage("tracker/items/cape.png", 4, 10);
+        setImage("tracker/items/book.png", 4, 11);
+        setImage("tracker/items/bugnet.png", 4, 12);
+        setImage("tracker/items/bluemerang.png", 4, 13);
+        setImage("tracker/items/powder.png", 5, 10);
+        setImage("tracker/items/mushroom.png", 5, 11);
+        setImage("tracker/items/shovel.png", 5, 12);
+        setImage("tracker/items/rederang.png", 5, 13);
+        setImage("tracker/items/bombos.png", 6, 10);
+        setImage("tracker/items/ether.png", 6, 11);
+        setImage("tracker/items/quake.png", 6, 12);
+        setImage("tracker/items/bombs.png", 6, 13);
+        // TODO: Make Exceptions
+        //setImage("tracker/items/sword1.png", 7, 10, (byte) 1);
+        //setImage("tracker/items/tunic0.png", 7, 11, (byte) 2);
+        //setImage("tracker/items/shield1.png", 7, 12, (byte) 3);
+        //setImage("tracker/items/heart0.png", 7, 13, (byte) 4);
+
     }
 
     public void setBigKeys(String img_loc)
@@ -442,6 +522,31 @@ public class Controller implements Initializable
         img.setLayoutX(x + Settings.offset_prizes.x);
         img.setLayoutY(y + 26 + Settings.offset_prizes.y);
         img.setVisible(Settings.prizes);
+    }
+
+    /**
+     * Sets the image of an ImageView based on its row and column in the gridpane.
+     * @param img_loc The location of the image (path)
+     * @param row The number of the row.
+     * @param column The number of the column.
+     */
+    public void setImage(String img_loc, int row, int column)
+    {
+        ImageView img = (ImageView) getNodeByRowColumnIndex(row, column, gridpane);
+        String strImg = img_loc;
+        img.setImage(new Image(getClass().getResource(strImg).toString()));
+
+        img.setOnMouseClicked(event ->
+        {
+            if (img.getOpacity() != 1.0d)
+            {
+                img.setOpacity(1.0d);
+            }
+            else
+            {
+                img.setOpacity(Settings.getOpacity());
+            }
+        });
     }
 
     /**
@@ -804,5 +909,81 @@ public class Controller implements Initializable
         colorpicker_stage.show();
     }
 
+    private int hpState = 0;
+    private int shieldState = 0;
+    private int tunicState = 0;
+    private int swordState = 0;
+    private int mittState = 0;
 
+    public void hplogic(MouseEvent mouseEvent)
+    {
+        hpState++;
+
+        if (hpState >= 4)
+            hpState = 0;
+
+        ImageView img = (ImageView) mouseEvent.getSource();
+        Platform.runLater(() -> img.setImage(new Image(getClass().getResource("tracker/items/heart" + hpState + ".png").toString())));
+    }
+
+    public void shieldlogic(MouseEvent mouseEvent)
+    {
+        shieldState++;
+
+        if (shieldState >= 4)
+        {
+            imgviewShield.setOpacity(Settings.getOpacity());
+            shieldState = 0;
+        }
+        else
+        {
+            imgviewShield.setOpacity(1.0d);
+        }
+
+        imgviewShield.setImage(new Image(getClass().getResource("tracker/items/shield" + shieldState + ".png").toString()));
+    }
+
+    public void tuniclogic(MouseEvent mouseEvent)
+    {
+        tunicState++;
+
+        if (tunicState >= 3)
+            tunicState = 0;
+
+        imgviewTunic.setImage(new Image(getClass().getResource("tracker/items/tunic" + tunicState + ".png").toString()));
+    }
+
+    public void swordlogic(MouseEvent mouseEvent)
+    {
+        swordState++;
+
+        if (swordState >= 5)
+        {
+            imgviewSword.setOpacity(Settings.getOpacity());
+            swordState = 0;
+        }
+        else
+        {
+            imgviewSword.setOpacity(1.0d);
+        }
+
+        imgviewSword.setImage(new Image(getClass().getResource("tracker/items/sword" + swordState + ".png").toString()));
+    }
+
+    public void mittlogic(MouseEvent mouseEvent)
+    {
+        mittState++;
+
+        if (mittState >= 3)
+        {
+            imgviewMitt.setOpacity(Settings.getOpacity());
+            mittState = 0;
+        }
+        else
+        {
+            imgviewMitt.setOpacity(1.0d);
+        }
+
+        imgviewMitt.setImage(new Image(getClass().getResource("tracker/items/mitts" + mittState + ".png").toString()));
+    }
 }
