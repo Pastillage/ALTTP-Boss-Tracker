@@ -183,6 +183,165 @@ public class Controller implements Initializable
     @FXML
     private ImageView imgviewHeartPiece;
 
+    @FXML
+    private AnchorPane mapanchor;
+
+    @FXML
+    private ImageView img_lightworld;
+
+    @FXML
+    private ImageView loc_linkhouse;
+
+    @FXML
+    private ImageView loc_uncle;
+
+    @FXML
+    private ImageView loc_frontescape;
+
+    @FXML
+    private ImageView loc_aga;
+
+    @FXML
+    private ImageView loc_darkescape;
+
+    @FXML
+    private ImageView loc_backescape;
+
+    @FXML
+    private ImageView loc_graveyardledge;
+
+    @FXML
+    private ImageView loc_kingtomb;
+
+    @FXML
+    private ImageView loc_sanc;
+
+    @FXML
+    private ImageView loc_bonk;
+
+    @FXML
+    private ImageView loc_lumberjack;
+
+    @FXML
+    private ImageView loc_forestdrop;
+
+    @FXML
+    private ImageView loc_mushroom;
+
+    @FXML
+    private ImageView loc_ped;
+
+    @FXML
+    private ImageView loc_blind;
+
+    @FXML
+    private ImageView loc_kakwell;
+
+    @FXML
+    private ImageView loc_scamvendor;
+
+    @FXML
+    private ImageView loc_chickenhouse;
+
+    @FXML
+    private ImageView loc_sick;
+
+    @FXML
+    private ImageView loc_tavern;
+
+    @FXML
+    private ImageView loc_boots;
+
+    @FXML
+    private ImageView loc_race;
+
+    @FXML
+    private ImageView loc_shovel;
+
+    @FXML
+    private ImageView loc_grove;
+
+    @FXML
+    private ImageView loc_dam;
+
+    @FXML
+    private ImageView loc_minimoldorm;
+
+    @FXML
+    private ImageView loc_ir;
+
+    @FXML
+    private ImageView loc_hylia_island;
+
+    @FXML
+    private ImageView loc_hylia_hobo;
+
+    @FXML
+    private ImageView loc_closet;
+
+    @FXML
+    private ImageView loc_green_pendant;
+
+    @FXML
+    private ImageView loc_ep;
+
+    @FXML
+    private ImageView loc_dp;
+
+    @FXML
+    private ImageView loc_th;
+
+    @FXML
+    private ImageView loc_witch;
+
+    @FXML
+    private ImageView loc_wf;
+
+    @FXML
+    private ImageView loc_ledge;
+
+    @FXML
+    private ImageView loc_scam;
+
+    @FXML
+    private ImageView loc_oldman;
+
+    @FXML
+    private ImageView loc_spectacle;
+
+    @FXML
+    private ImageView loc_th_mirror;
+
+    @FXML
+    private ImageView loc_e_tablet;
+
+    @FXML
+    private ImageView loc_hs_mirror;
+
+    @FXML
+    private ImageView loc_mimic;
+
+    @FXML
+    private ImageView loc_spiral;
+
+    @FXML
+    private ImageView loc_paradox;
+
+    @FXML
+    private ImageView loc_b_tablet;
+
+    @FXML
+    private ImageView loc_check;
+
+    @FXML
+    private ImageView loc_agina;
+
+    @FXML
+    private ImageView loc_smith;
+
+    @FXML
+    private ImageView loc_batcave;
+
     private int currMM = 0;
     private int currTR = 0;
     private Color currBGColour;
