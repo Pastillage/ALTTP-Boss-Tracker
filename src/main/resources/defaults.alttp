@@ -1,4 +1,4 @@
-# Default Settings in case of a corruption or error.
+# Default Tracker.Settings in case of a corruption or error.
 MEDALS=1
 CHEST_MAX=3;2;2;5;6;2;4;3;2;5;
 MEDAL_OFFSET_Y=0.0

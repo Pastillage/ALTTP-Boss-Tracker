@@ -30,14 +30,14 @@
       </AnchorPane>
       <MenuBar fx:id="menubar" prefHeight="26.0" prefWidth="910.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Settings">
+          <Menu mnemonicParsing="false" text="Tracker.Settings">
             <items>
                 <MenuItem mnemonicParsing="false" onAction="#ToggleChests" text="Toggle Chests" />
                 <MenuItem mnemonicParsing="false" onAction="#ToggleMedallions" text="Toggle Medallions" />
                 <MenuItem mnemonicParsing="false" onAction="#ToggleNames" text="Toggle Names" />
                 <MenuItem mnemonicParsing="false" onAction="#TogglePrizes" text="Toggle Prizes" />
                 <MenuItem disable="true" mnemonicParsing="false" text="Toggle Edit Mode" />
-                <MenuItem mnemonicParsing="false" onAction="#ColourPicker" text="Change Settings" />
+                <MenuItem mnemonicParsing="false" onAction="#ColourPicker" text="Change Tracker.Settings" />
                 <MenuItem disable="true" mnemonicParsing="false" text="Reset Layout" />
             </items>
           </Menu>

@@ -1,6 +1,7 @@
 /**
- * SettingsController -> Now Settings due to changes lol.
+ * SettingsController -> Now Tracker.Settings due to changes lol.
  */
+import Tracker.Settings;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

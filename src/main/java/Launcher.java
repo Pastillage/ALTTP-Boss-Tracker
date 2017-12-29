@@ -1,3 +1,4 @@
+import Tracker.Settings;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +13,7 @@ public class Launcher extends Application
 {
     public void start(Stage primaryStage) throws Exception
     {
-        // Load Settings from .INI
+        // Load Tracker.Settings from .INI
         Settings.LoadSettings();
 
         FXMLLoader fxmlLoader = new FXMLLoader();

@@ -1,3 +1,7 @@
+import Tracker.Keysanity;
+import Tracker.LocationFactory;
+import Tracker.OverworldMap;
+import Tracker.Settings;
 import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,9 +21,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.sound.midi.Soundbank;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -359,6 +363,7 @@ public class Controller implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         initHashMaps();
+        initLocations();
         Platform.runLater(() -> setBGcolor(Color.BLACK));
         Platform.runLater(() -> fillGridpane());
         Platform.runLater(() -> setDefaultBosses());
@@ -367,6 +372,16 @@ public class Controller implements Initializable
         Platform.runLater(() -> changeListenerThread());
         Platform.runLater(() -> setItems());
         Platform.runLater(() -> initExceptionalItems());
+    }
+
+    public void initLocations()
+    {
+        createLocationDefaults();
+    }
+
+    public void createLocationDefaults()
+    {
+        LocationFactory.getINSTANCE().defaultLocations(loc_linkhouse, loc_uncle, loc_frontescape, loc_aga, loc_darkescape, loc_backescape, loc_graveyardledge, loc_kingtomb, loc_sanc, loc_bonk, loc_lumberjack, loc_forestdrop, loc_mushroom, loc_ped, loc_blind, loc_kakwell, loc_scamvendor, loc_chickenhouse, loc_sick, loc_tavern, loc_boots, loc_race, loc_shovel, loc_grove, loc_dam, loc_minimoldorm, loc_ir, loc_hylia_island, loc_hylia_hobo, loc_closet, loc_green_pendant, loc_ep, loc_dp, loc_th, loc_witch, loc_wf, loc_ledge, loc_scam, loc_oldman, loc_spectacle, loc_th_mirror, loc_e_tablet, loc_hs_mirror, loc_mimic, loc_spiral, loc_paradox, loc_b_tablet, loc_check, loc_agina, loc_smith, loc_batcave);
     }
 
     // TODO: SRAM but for that I need the boss location flags.
@@ -383,6 +398,12 @@ public class Controller implements Initializable
         Thread tSRAM = new Thread(r);
         tSRAM.setDaemon(true);
         tSRAM.start();
+    }
+
+    // TODO: Thread that handles all location logic.
+    public void DaemonLocations()
+    {
+
     }
 
     public void initHashMaps()
@@ -647,8 +668,8 @@ public class Controller implements Initializable
     /**
      * Sets chests on top of the images in view.
      * @param val Amount of chests in dungeon with an item.
-     * @param x X Location (colunm * 64)
-     * @param y Y Location (row * 64)
+     * @param x X Tracker.Location (colunm * 64)
+     * @param y Y Tracker.Location (row * 64)
      */
     public void setChests(int val, double x, double y, ImageView img)
     {
@@ -662,8 +683,8 @@ public class Controller implements Initializable
     /**
      * Sets the labels to be shown on top of the boss images.
      * @param bossname Name of the boss, LOWERCASE.
-     * @param x X Location (column * 64)
-     * @param y Y Location (row * 64)
+     * @param x X Tracker.Location (column * 64)
+     * @param y Y Tracker.Location (row * 64)
      */
     public void setLabels(String bossname, double x, double y)
     {

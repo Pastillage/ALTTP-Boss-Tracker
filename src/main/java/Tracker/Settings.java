@@ -1,18 +1,17 @@
+package Tracker;
+
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 
 /**
- * General Settings.
+ * General Tracker.Settings.
  */
 public final class Settings
 {
-    // TODO: Load Settings when opening settings
+    // TODO: Load Tracker.Settings when opening settings
     // TODO: Save to INI
     // TODO: Read from INI
     // TODO: SRAM

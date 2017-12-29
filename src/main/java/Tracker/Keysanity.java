@@ -1,8 +1,10 @@
+package Tracker;
+
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
 /**
- * Keysanity Helper.
+ * Tracker.Keysanity Helper.
  */
 public final class Keysanity
 {

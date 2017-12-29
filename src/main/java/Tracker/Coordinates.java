@@ -1,5 +1,7 @@
+package Tracker;
+
 /**
- * Coordinates X,Y.
+ * Tracker.Coordinates X,Y.
  */
 public class Coordinates
 {
